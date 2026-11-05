@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mock-oauth-psm24446
+    runtime: python
+    plan: free
+    buildCommand: "true"
+    startCommand: python3 mock_oauth_server.py
+    envVars:
+      - key: CLIENT_ID
+        value: psm24446-client
+      - key: CLIENT_SECRET
+        sync: false
+      - key: ACCESS_TTL
+        value: "120"
+      - key: ROTATE
+        value: "1"
